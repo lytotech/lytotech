@@ -1,21 +1,18 @@
+import { Container } from "@/components/ui/Container";
+
 const skills = [
-  // Backend
   "Spring Boot",
   "Quarkus",
   "Java",
-  // Frontend
   "Angular",
   "React",
   "TypeScript",
-  // Data
   "PostgreSQL",
   "Flyway",
   "Hibernate",
-  // DevOps / Cloud
   "Docker",
   "Azure",
   "GitHub Actions",
-  // Tools
   "TailwindCSS",
   "PrimeNG",
   "Nx Monorepo",
@@ -23,8 +20,8 @@ const skills = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="about" className="py-24">
+      <Container>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Text */}
           <div>
@@ -75,7 +72,7 @@ export function About() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

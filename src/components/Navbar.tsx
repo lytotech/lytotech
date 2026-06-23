@@ -25,7 +25,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a
           href="#hero"
           className="text-[#00ff88] font-mono font-bold text-lg tracking-tight"

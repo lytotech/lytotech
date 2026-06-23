@@ -1,10 +1,11 @@
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ui/ProjectCard";
+import { Container } from "@/components/ui/Container";
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 border-t border-[#1e1e1e]">
-      <div className="max-w-5xl mx-auto">
+    <section id="projects" className="py-24 border-t border-[#1e1e1e]">
+      <Container>
         <div className="mb-12">
           <p className="text-xs font-mono text-[#00ff88] mb-3 tracking-widest uppercase">
             Projetos
@@ -19,7 +20,7 @@ export function Projects() {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

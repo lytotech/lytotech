@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Container } from "@/components/ui/Container";
 
 // Create a free form at https://formspree.io and replace this with your form ID
 const FORMSPREE_ID = "YOUR_FORM_ID";
@@ -77,9 +78,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-6 border-t border-[#1e1e1e]"
+      className="py-24 border-t border-[#1e1e1e]"
     >
-      <div className="max-w-5xl mx-auto">
+      <Container>
         <div className="grid md:grid-cols-2 gap-16">
           {/* Left: info */}
           <div>
@@ -219,7 +220,7 @@ export function Contact() {
             )}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

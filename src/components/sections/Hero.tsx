@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center relative pt-16"
+      className="min-h-screen flex flex-col justify-center relative pt-16"
     >
       {/* Subtle grid background */}
       <div
@@ -19,9 +19,9 @@ export function Hero() {
       {/* Accent glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00ff88]/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <Container className="relative z-10 flex flex-col items-center text-center">
+      <Container className="relative z-10 text-center">
         {/* Avatar monogram */}
-        <div className="w-20 h-20 rounded-2xl bg-[#111111] border border-[#1e1e1e] flex items-center justify-center mb-8">
+        <div className="w-20 h-20 rounded-2xl bg-[#111111] border border-[#1e1e1e] flex items-center justify-center mx-auto mb-8">
           <span className="text-2xl font-bold font-mono text-[#00ff88]">
             LT
           </span>
@@ -39,7 +39,7 @@ export function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg text-[#888888] leading-relaxed mb-10 max-w-xl">
+        <p className="text-lg text-[#888888] leading-relaxed mb-10 max-w-xl mx-auto">
           Crio aplicações{" "}
           <span className="text-white">SaaS completas</span> — do backend ao
           frontend. Apaixonado por resolver problemas reais com tecnologia.

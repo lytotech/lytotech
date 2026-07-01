@@ -29,6 +29,25 @@ export const projects: Project[] = [
       "Painel operacional para roteiros",
       "Fluxo comercial com pagamentos",
     ],
+    demo: "https://www.turemar.com.br",
+    status: "active",
+  },
+  {
+    id: "sgtur",
+    name: "SGTur",
+    tagline: "Operação turística integrada",
+    description:
+      "Aplicação web para centralizar rotinas de gestão turística, atendimento, cadastros, controle operacional e acompanhamento de processos internos.",
+    role: "Full stack",
+    year: "2025",
+    tech: ["Angular", "Spring Boot", "PostgreSQL", "Docker", "Azure"],
+    badges: ["Turismo", "Operacional", "Web app"],
+    highlights: [
+      "Fluxos internos para equipes de turismo",
+      "Cadastros e consultas operacionais",
+      "Publicação em ambiente cloud",
+    ],
+    demo: "https://www.sgtur.com.br",
     status: "active",
   },
   {
@@ -46,6 +65,7 @@ export const projects: Project[] = [
       "Pontuação automática por placar",
       "Ranking com XP, níveis e conquistas",
     ],
+    demo: "https://www.localbet.com.br",
     status: "active",
   },
   {
@@ -70,6 +90,25 @@ export const projects: Project[] = [
       "Contas, cartões e parcelas",
       "Assinaturas e cobrança com Stripe",
     ],
+    demo: "https://www.salvemais.com.br",
+    status: "active",
+  },
+  {
+    id: "invmetro",
+    name: "InvMetro",
+    tagline: "Controle para inventário metrológico",
+    description:
+      "Sistema para organizar instrumentos, medições, calibrações e histórico de controle metrológico com foco em rastreabilidade e rotina operacional.",
+    role: "Full stack",
+    year: "2025",
+    tech: ["Angular", "Spring Boot", "PostgreSQL", "TypeScript", "TailwindCSS"],
+    badges: ["Controle", "Metrologia", "Web app"],
+    highlights: [
+      "Cadastro de instrumentos e responsáveis",
+      "Histórico de calibrações e medições",
+      "Acompanhamento de status operacional",
+    ],
+    demo: "https://invmetro.com.br/#/",
     status: "active",
   },
 ];

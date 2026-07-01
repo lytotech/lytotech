@@ -139,7 +139,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 className="flex items-center gap-1.5 text-xs text-[#00ff88] transition-colors hover:text-[#00cc6a]"
               >
                 <ExternalLinkIcon />
-                Demo
+                Acessar app
               </a>
             )}
           </div>

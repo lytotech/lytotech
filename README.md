@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# lytotech
 
-## Getting Started
+Portfolio e presenca digital da lytotech, organizacao focada em criar produtos web, SaaS e sistemas sob medida com backend, frontend, banco de dados e deploy.
 
-First, run the development server:
+## Sobre
+
+A lytotech reune projetos desenvolvidos por Tallyto Rodrigues, com foco em resolver problemas reais de operacao, automacao e experiencia de uso.
+
+Areas principais:
+
+- Aplicacoes SaaS completas
+- Sites institucionais
+- Sistemas de gestao
+- Integracoes com pagamentos, automacoes e APIs
+- Deploy em nuvem e pipelines com GitHub Actions
+
+## Projetos
+
+| Projeto | Descricao | URL |
+| --- | --- | --- |
+| Turemar | Site institucional para turismo maritimo, cruzeiros e pacotes personalizados. | <https://www.turemar.com.br> |
+| SGTur | Plataforma de gestao para agencias de turismo. | <https://www.sgtur.com.br> |
+| LocalBet | Plataforma para organizar boloes entre amigos, sem casa de aposta. | <https://www.localbet.com.br> |
+| Salve Mais | SaaS de controle financeiro para familias. | <https://www.salvemais.com.br> |
+| Invmetro | Site institucional para empresa de inspecao veicular. | <https://invmetro.com.br/#/> |
+
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Static export
+
+Tecnologias usadas nos projetos destacados:
+
+- Angular
+- React
+- Spring Boot
+- Quarkus
+- PostgreSQL
+- Docker
+- Azure Static Web Apps
+- GitHub Actions
+
+## Desenvolvimento
+
+Instale as dependencias:
+
+```bash
+npm install
+```
+
+Execute o ambiente local:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Gere o build estatico:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estrutura
 
-## Learn More
+- `src/app`: rotas e layout principal do Next.js App Router
+- `src/components`: secoes e componentes de UI
+- `src/data/projects.ts`: lista de projetos exibidos no portfolio
+- `public/projects`: miniaturas dos projetos
 
-To learn more about Next.js, take a look at the following resources:
+## Contato
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: <https://github.com/tallyto>
+- LinkedIn: <https://linkedin.com/in/tallyto>
+- Email: <rodrigues.tallyto@gmail.com>

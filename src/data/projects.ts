@@ -8,6 +8,7 @@ export interface Project {
   tech: string[];
   badges: string[];
   highlights: string[];
+  image?: string;
   github?: string;
   demo?: string;
   status: "active" | "coming-soon";
@@ -29,7 +30,8 @@ export const projects: Project[] = [
       "Conteúdo comercial com foco em atendimento personalizado",
       "Formulário e canais diretos para contato e WhatsApp",
     ],
-    demo: "https://purple-field-0e6fc1f10.7.azurestaticapps.net",
+    image: "/projects/turemar.png",
+    demo: "https://www.turemar.com.br",
     status: "active",
   },
   {
@@ -47,6 +49,7 @@ export const projects: Project[] = [
       "Controle de comissões para rotina comercial",
       "Landing page com chamada para teste gratuito",
     ],
+    image: "/projects/sgtur.png",
     demo: "https://www.sgtur.com.br",
     status: "active",
   },
@@ -65,6 +68,7 @@ export const projects: Project[] = [
       "Pontuação, ranking e prêmio calculados automaticamente",
       "XP, níveis, badges e notificações para o grupo",
     ],
+    image: "/projects/localbet.png",
     demo: "https://www.localbet.com.br",
     status: "active",
   },
@@ -90,6 +94,7 @@ export const projects: Project[] = [
       "Acompanhamento de investimentos e vida financeira",
       "Assinaturas e cobrança integradas com Stripe",
     ],
+    image: "/projects/salve-mais.png",
     demo: "https://www.salvemais.com.br",
     status: "active",
   },
@@ -108,6 +113,7 @@ export const projects: Project[] = [
       "Conteúdo para unidades em Curitiba e Campo Largo",
       "FAQ e chamadas para agendamento via WhatsApp",
     ],
+    image: "/projects/invmetro.png",
     demo: "https://invmetro.com.br/#/",
     status: "active",
   },

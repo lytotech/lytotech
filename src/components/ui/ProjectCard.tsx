@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Project } from "@/data/projects";
 import { TechBadge } from "./TechBadge";
 
@@ -54,18 +55,30 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         </div>
-        <div className="grid min-h-32 grid-cols-[1.15fr_0.85fr] gap-3 rounded-md border border-[#1e1e1e] bg-[#090909] p-3">
-          <div className="flex flex-col gap-2">
-            <span className="h-3 w-20 rounded bg-[#00ff88]/40" />
-            <span className="h-2 w-full rounded bg-white/10" />
-            <span className="h-2 w-5/6 rounded bg-white/10" />
-            <span className="mt-auto h-8 rounded border border-[#00ff88]/20 bg-[#00ff88]/10" />
-          </div>
-          <div className="grid grid-rows-3 gap-2">
-            <span className="rounded border border-white/10 bg-white/[0.04]" />
-            <span className="rounded border border-white/10 bg-white/[0.04]" />
-            <span className="rounded border border-white/10 bg-white/[0.04]" />
-          </div>
+        <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-[#1e1e1e] bg-[#090909]">
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={`Miniatura do site ${project.name}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          ) : (
+            <div className="grid h-full grid-cols-[1.15fr_0.85fr] gap-3 p-3">
+              <div className="flex flex-col gap-2">
+                <span className="h-3 w-20 rounded bg-[#00ff88]/40" />
+                <span className="h-2 w-full rounded bg-white/10" />
+                <span className="h-2 w-5/6 rounded bg-white/10" />
+                <span className="mt-auto h-8 rounded border border-[#00ff88]/20 bg-[#00ff88]/10" />
+              </div>
+              <div className="grid grid-rows-3 gap-2">
+                <span className="rounded border border-white/10 bg-white/[0.04]" />
+                <span className="rounded border border-white/10 bg-white/[0.04]" />
+                <span className="rounded border border-white/10 bg-white/[0.04]" />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

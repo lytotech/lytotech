@@ -78,7 +78,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 border-t border-[#1e1e1e]"
+      className="scroll-mt-20 border-t border-[#1e1e1e] py-20 sm:py-24"
     >
       <Container>
         <div className="grid md:grid-cols-2 gap-16">

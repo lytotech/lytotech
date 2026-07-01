@@ -20,7 +20,7 @@ const skills = [
 
 export function About() {
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="scroll-mt-20 py-20 sm:py-24">
       <Container>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Text */}

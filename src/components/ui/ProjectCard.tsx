@@ -42,66 +42,109 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div
-      className={`relative flex flex-col p-6 rounded-xl border bg-[#111111] transition-all duration-300 group ${
+      className={`relative flex h-full min-h-[560px] flex-col overflow-hidden rounded-lg border bg-[#111111] transition-all duration-300 group ${
         isComingSoon
           ? "border-[#1e1e1e] opacity-60"
           : "border-[#1e1e1e] hover:border-[#00ff88]/30 hover:bg-[#131313]"
       }`}
     >
-      {/* Top badges */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.badges.map((badge) => (
-          <TechBadge key={badge} label={badge} variant="tag" />
-        ))}
+      <div className="border-b border-[#1e1e1e] bg-[#0d0d0d] p-4">
+        <div className="mb-3 flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+        </div>
+        <div className="grid min-h-32 grid-cols-[1.15fr_0.85fr] gap-3 rounded-md border border-[#1e1e1e] bg-[#090909] p-3">
+          <div className="flex flex-col gap-2">
+            <span className="h-3 w-20 rounded bg-[#00ff88]/40" />
+            <span className="h-2 w-full rounded bg-white/10" />
+            <span className="h-2 w-5/6 rounded bg-white/10" />
+            <span className="mt-auto h-8 rounded border border-[#00ff88]/20 bg-[#00ff88]/10" />
+          </div>
+          <div className="grid grid-rows-3 gap-2">
+            <span className="rounded border border-white/10 bg-white/[0.04]" />
+            <span className="rounded border border-white/10 bg-white/[0.04]" />
+            <span className="rounded border border-white/10 bg-white/[0.04]" />
+          </div>
+        </div>
       </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-semibold text-white mb-1">{project.name}</h3>
-      <p className="text-sm text-[#00ff88] mb-3 font-medium">
-        {project.tagline}
-      </p>
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="mb-4 flex flex-wrap gap-2">
+          {project.badges.map((badge) => (
+            <TechBadge key={badge} label={badge} variant="tag" />
+          ))}
+        </div>
 
-      {/* Description */}
-      <p className="text-sm text-[#888888] leading-relaxed flex-1 mb-5">
-        {project.description}
-      </p>
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <h3 className="break-words text-xl font-semibold text-white">
+              {project.name}
+            </h3>
+            <p className="mt-1 text-sm font-medium text-[#00ff88]">
+              {project.tagline}
+            </p>
+          </div>
+          <span className="shrink-0 rounded border border-[#1e1e1e] px-2 py-1 font-mono text-xs text-[#888888]">
+            {project.year}
+          </span>
+        </div>
 
-      {/* Tech stack */}
-      {project.tech.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mb-5">
+        <p className="mb-5 text-sm leading-relaxed text-[#888888]">
+          {project.description}
+        </p>
+
+        <div className="mb-5 rounded-md border border-[#1e1e1e] bg-[#0d0d0d] p-4">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[#666]">
+            Entrega
+          </p>
+          <p className="mb-3 text-sm text-white">{project.role}</p>
+          <ul className="space-y-2">
+            {project.highlights.map((highlight) => (
+              <li
+                key={highlight}
+                className="flex gap-2 text-sm leading-snug text-[#888888]"
+              >
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00ff88]" />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-5 flex flex-wrap gap-1.5">
           {project.tech.map((t) => (
             <TechBadge key={t} label={t} variant="tech" />
           ))}
         </div>
-      )}
 
-      {/* Links */}
-      {!isComingSoon && (project.github || project.demo) && (
-        <div className="flex gap-3 mt-auto pt-4 border-t border-[#1e1e1e]">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-[#888888] hover:text-white transition-colors"
-            >
-              <GithubIcon />
-              GitHub
-            </a>
-          )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-[#00ff88] hover:text-[#00cc6a] transition-colors"
-            >
-              <ExternalLinkIcon />
-              Demo
-            </a>
-          )}
-        </div>
-      )}
+        {!isComingSoon && (project.github || project.demo) && (
+          <div className="mt-auto flex gap-3 border-t border-[#1e1e1e] pt-4">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-[#888888] transition-colors hover:text-white"
+              >
+                <GithubIcon />
+                GitHub
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-[#00ff88] transition-colors hover:text-[#00cc6a]"
+              >
+                <ExternalLinkIcon />
+                Demo
+              </a>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

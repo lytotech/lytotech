@@ -25,19 +25,19 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a
           href="#hero"
-          className="text-[#00ff88] font-mono font-bold text-lg tracking-tight"
+          className="shrink-0 text-lg font-bold tracking-tight text-[#00ff88] font-mono"
         >
           lytotech
         </a>
-        <ul className="flex gap-6">
+        <ul className="flex min-w-0 gap-3 sm:gap-6">
           {links.map(({ href, label }) => (
             <li key={href}>
               <a
                 href={href}
-                className="text-sm text-[#888888] hover:text-white transition-colors"
+                className="text-xs text-[#888888] transition-colors hover:text-white sm:text-sm"
               >
                 {label}
               </a>

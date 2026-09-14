@@ -3,14 +3,11 @@
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 
-// Create a free form at https://formspree.io and replace this with your form ID
-const FORMSPREE_ID = "YOUR_FORM_ID";
-
 const EMAIL = "rodrigues.tallyto@gmail.com";
 // Update these with your actual links
 const GITHUB_URL = "https://github.com/tallyto";
 const LINKEDIN_URL = "https://linkedin.com/in/tallyto";
-const WHATSAPP_NUMBER = "5500000000000"; // Format: country code + DDD + number
+const WHATSAPP_NUMBER = "5541987810179"; // Format: country code + DDD + number
 
 function GithubIcon() {
   return (
@@ -54,25 +51,21 @@ function EmailIcon() {
   );
 }
 
-type FormState = "idle" | "loading" | "success" | "error";
+type FormState = "idle" | "loading" | "success";
 
 export function Contact() {
   const [state, setState] = useState<FormState>("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setState("loading");
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      setState(res.ok ? "success" : "error");
-    } catch {
-      setState("error");
-    }
+    const subject = encodeURIComponent(`Contato pelo site — ${form.name}`);
+    const body = encodeURIComponent(
+      `Nome: ${form.name}\nE-mail: ${form.email}\n\n${form.message}`,
+    );
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    setState("success");
   }
 
   return (
@@ -149,10 +142,10 @@ export function Contact() {
               <div className="h-full flex flex-col items-center justify-center text-center p-8 rounded-xl border border-[#00ff88]/20 bg-[#00ff88]/5">
                 <div className="text-4xl mb-4">✓</div>
                 <p className="text-white font-semibold text-lg mb-2">
-                  Mensagem enviada!
+                  Seu cliente de e-mail foi aberto!
                 </p>
                 <p className="text-[#888888] text-sm">
-                  Obrigado pelo contacto. Responderei em breve.
+                  Confira a mensagem e clique em enviar para concluir o contato.
                 </p>
               </div>
             ) : (
@@ -203,18 +196,12 @@ export function Contact() {
                   />
                 </div>
 
-                {state === "error" && (
-                  <p className="text-red-400 text-xs">
-                    Ocorreu um erro. Tenta novamente ou envia email diretamente.
-                  </p>
-                )}
-
                 <button
                   type="submit"
                   disabled={state === "loading"}
                   className="px-6 py-3.5 bg-[#00ff88] text-black font-semibold rounded-lg text-sm hover:bg-[#00cc6a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {state === "loading" ? "A enviar..." : "Enviar mensagem"}
+                  {state === "loading" ? "Abrindo e-mail..." : "Enviar mensagem"}
                 </button>
               </form>
             )}

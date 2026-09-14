@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
+import { Infrastructure } from "@/components/sections/Infrastructure";
 import { Container } from "@/components/ui/Container";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Infrastructure />
         <Contact />
       </main>
       <footer className="border-t border-[#1e1e1e] py-6">

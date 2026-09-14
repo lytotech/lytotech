@@ -42,7 +42,7 @@ export function Hero() {
         <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-[#888888] sm:text-lg">
           Crio aplicações{" "}
           <span className="text-white">SaaS completas</span> — do backend ao
-          frontend. Apaixonado por resolver problemas reais com tecnologia.
+          frontend — e preparo a infraestrutura para colocá-las em produção.
         </p>
 
         {/* CTAs */}
@@ -57,7 +57,7 @@ export function Hero() {
             href="#contact"
             className="rounded-lg border border-[#1e1e1e] px-8 py-3.5 text-sm text-white transition-colors hover:border-[#888888]"
           >
-            Entrar em contato
+            Falar sobre um projeto
           </a>
         </div>
       </Container>

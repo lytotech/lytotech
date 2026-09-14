@@ -1,38 +1,38 @@
 import { Container } from "@/components/ui/Container";
 
-const skills = [
-  "Spring Boot",
-  "Quarkus",
-  "Java",
-  "Angular",
-  "React",
-  "TypeScript",
-  "PostgreSQL",
-  "Flyway",
-  "Hibernate",
-  "Docker",
-  "Azure",
-  "GitHub Actions",
-  "TailwindCSS",
-  "PrimeNG",
-  "Nx Monorepo",
+const skillGroups = [
+  {
+    name: "Backend",
+    skills: ["Spring Boot", "Quarkus", "Java", "Hibernate"],
+  },
+  {
+    name: "Frontend",
+    skills: ["Angular", "React", "TypeScript", "TailwindCSS", "PrimeNG"],
+  },
+  {
+    name: "Dados & plataforma",
+    skills: ["PostgreSQL", "Flyway", "Docker"],
+  },
+  {
+    name: "DevOps",
+    skills: ["Azure", "GitHub Actions", "Nx Monorepo"],
+  },
 ];
 
 export function About() {
   return (
     <section id="about" className="scroll-mt-20 py-20 sm:py-24">
       <Container>
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Text */}
+        <div className="grid items-start gap-16 md:grid-cols-2">
           <div>
-            <p className="text-xs font-mono text-[#00ff88] mb-3 tracking-widest uppercase">
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[#00ff88]">
               Sobre mim
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
               Construindo produtos{" "}
               <span className="text-[#00ff88]">do zero ao deploy</span>
             </h2>
-            <div className="space-y-4 text-[#888888] leading-relaxed">
+            <div className="space-y-4 leading-relaxed text-[#888888]">
               <p>
                 Sou desenvolvedor Full Stack com experiência em criar aplicações
                 SaaS completas — desde a modelagem do banco de dados até
@@ -55,19 +55,25 @@ export function About() {
             </div>
           </div>
 
-          {/* Skills */}
           <div>
-            <p className="text-xs font-mono text-[#888888] mb-4 tracking-widest uppercase">
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#888888]">
               Tecnologias
             </p>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1.5 text-sm font-mono rounded-lg bg-[#111111] border border-[#1e1e1e] text-[#888888] hover:text-white hover:border-[#00ff88]/30 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
+            <div className="space-y-5">
+              {skillGroups.map((group) => (
+                <div key={group.name}>
+                  <p className="mb-2 text-xs text-[#666666]">{group.name}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="cursor-default rounded-lg border border-[#1e1e1e] bg-[#111111] px-3 py-1.5 font-mono text-sm text-[#888888] transition-colors hover:border-[#00ff88]/30 hover:text-white"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
